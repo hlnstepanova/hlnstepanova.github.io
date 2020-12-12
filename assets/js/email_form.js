@@ -1,63 +1,85 @@
+(function ($) {
+    "use strict";
 
-$(function()
-{
-    function after_form_submitted(data) 
-    {
-        if(data.result == 'success')
-        {
-            $('form#reused_form').hide();
-            $('#success_message').show();
-            $('#error_message').hide();
+    
+    /*==================================================================
+    [ Validate ]*/
+    var name = $('.validate-input input[name="name"]');
+    var email = $('.validate-input input[name="email"]');
+    var message = $('.validate-input textarea[name="message"]');
+
+
+    $('.validate-form').on('submit',function(e){
+        var check = true;
+
+        if($(name).val().trim() == ''){
+            showValidate(name);
+            check=false;
         }
-        else
-        {
-            $('#error_message').append('<ul></ul>');
 
-            jQuery.each(data.errors,function(key,val)
-            {
-                $('#error_message ul').append('<li>'+key+':'+val+'</li>');
-            });
-            $('#success_message').hide();
-            $('#error_message').show();
+        if($(subject).val().trim() == ''){
+            showValidate(subject);
+            check=false;
+        }
 
-            //reverse the response on the button
-            $('button[type="button"]', $form).each(function()
-            {
-                $btn = $(this);
-                label = $btn.prop('orig_label');
-                if(label)
-                {
-                    $btn.prop('type','submit' ); 
-                    $btn.text(label);
-                    $btn.prop('orig_label','');
+
+        if($(email).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+            showValidate(email);
+            check=false;
+        }
+
+        if($(message).val().trim() == ''){
+            showValidate(message);
+            check=false;
+        }
+        if(!check)
+            return false;
+
+        e.preventDefault();
+      
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbxuSCQS7maeU-2N3E7T0fgqGlby5bGOEmLSvmh2/exec",
+            method: "POST",
+            dataType: "json",
+            data: $(".contact-form").serialize(),
+            success: function(response) {
+                
+                if(response.result == "success") {
+                    $('.contact-form')[0].reset();
+                    alert('Thank you for contacting us.');
+                    return true;
                 }
-            });
-            
-        }//else
+                else {
+                    alert("Something went wrong. Please try again.")
+                }
+            },
+            error: function() {
+                
+                alert("Something went wrong. Please try again.")
+            }
+        })
+    });
+
+
+    $('.validate-form').each(function(){
+        $(this).focus(function(){
+           hideValidate(this);
+       });
+    });
+
+    function showValidate(input) {
+        var thisAlert = $(input).parent();
+
+        $(thisAlert).addClass('alert-validate');
     }
 
-	$('#reused_form').submit(function(e)
-      {
-        e.preventDefault();
+    function hideValidate(input) {
+        var thisAlert = $(input).parent();
 
-        $form = $(this);
-        //show some response on the button
-        $('button[type="submit"]', $form).each(function()
-        {
-            $btn = $(this);
-            $btn.prop('type','button' ); 
-            $btn.prop('orig_label',$btn.text());
-            $btn.text('Sending ...');
-        });
-        
+        $(thisAlert).removeClass('alert-validate');
+    }
+    
+    
 
-                    $.ajax({
-                type: "POST",
-                url: 'handler.php',
-                data: $form.serialize(),
-                success: after_form_submitted,
-                dataType: 'json' 
-            });        
-        
-      });	
-});
+})(jQuery);
+
