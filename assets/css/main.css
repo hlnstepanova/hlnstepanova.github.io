@@ -2,9 +2,20 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
 /*
+	--Credits--
+	
+	Design: 
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Images:
+	https://unsplash.com/photos/5siQcvSxCP8
+
+
+	Vertical timeline:
+	https://codepen.io/ygc/pen/AXzVya/
+	
 */
 
 html, body, div, span, applet, object,
@@ -1777,6 +1788,20 @@ input, select, textarea {
 		margin-bottom: 2em;
 	}
 
+	header.trophy {
+		display: flex;
+	}
+
+
+	header.trophy > :nth-child(2):after {
+		content: '';
+		background-color: #ffffff;
+		display: block;
+		height: 2px;
+		margin: 0.325em 0 0.5em 0;
+		width: 100%;
+	}
+
 		header.major > :first-child {
 			margin-bottom: 0;
 			width: calc(100% + 0.5em);
@@ -2141,11 +2166,25 @@ input, select, textarea {
 			height: 2.75em;
 			line-height: 2.75em;
 			width: 2.75em;
+			box-shadow: inset 0 0 0 1px rgba(93, 143, 201, 0.637);
 		}
 
 		.icon.major, .icon.top{
 			display: block;
 			margin: 0 0 1rem 0;
+		}
+
+		.icon.trophy{
+			display: block;
+			margin: -5px 15px 5px 0px;
+			color: rgb(201, 181, 93);
+			font-size: 40px;
+		}
+
+		.icon.contact{
+			border-radius: 2.75em;
+			display: block;
+			margin: 1rem 0rem 0rem -1rem;
 		}
 
 		@media screen and (max-width: 840px) {
@@ -2173,9 +2212,6 @@ input, select, textarea {
 		transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 	}
 
-	.icon.style2:before {
-		box-shadow: inset 0 0 0 1px rgba(93, 143, 201, 0.637);
-	}
 
 	a.icon.style2:hover:before {
 		box-shadow: inset 0 0 0 1px #47D3E5;
@@ -2189,6 +2225,16 @@ input, select, textarea {
 	}
 
 /* Image */
+.badge {
+	border: 0;
+	display: inline-block;
+	position: relative;
+	margin: auto;
+}
+
+.badge img {
+	display: block;
+}
 
 	.image {
 		border: 0;
@@ -3642,10 +3688,17 @@ input, select, textarea {
 			}
 
 			#main > * > .inner {
-				padding: 4em 0 2em 0 ;
+				padding: 2em 0 2em 0 ;
 				margin: 0 auto;
 				max-width: 65em;
 				width: calc(100% - 6em);
+			}
+
+			#contactme > .inner {
+					padding: 0;
+					margin: 0 0 0 1rem;
+					max-width: 65em;
+					width: calc(100% - 6em);
 			}
 
 				@media screen and (max-width: 736px) {
@@ -3667,7 +3720,6 @@ input, select, textarea {
 	#contact {
 		border-bottom: solid 1px rgba(212, 212, 255, 0.1);
 		overflow-x: hidden;
-		margin-right: 20px;
 	}
 
 		#contact > .inner {
@@ -3679,7 +3731,7 @@ input, select, textarea {
 		}
 
 			#contact > .inner > :nth-child(2n - 1) {
-				padding: 4em 3em 2em 0 ;
+				padding: 3em 3em 2em 0 ;
 				border-right: solid 1px rgba(212, 212, 255, 0.1);
 				width: 60%;
 			}
@@ -6036,7 +6088,7 @@ input, select, textarea {
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/resume.jpg");
+		background-image: url("../../images/qualifications.jpg");
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -6684,5 +6736,49 @@ input, select, textarea {
 						}
 		
 				}
+
+				/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+	position: relative;
+  }
+  
+  .alert-validate::before {
+	content: attr(data-validate);
+	position: absolute;
+	max-width: 100%;
+	padding: 4px 25px 4px 10px;
+	top: 5px;
+	right: 8px;
+	pointer-events: none;
+	color: #a06262;
+	font-size: 14px;
+	line-height: 1.4;
+	text-align: left;
+  }
+  
+  .alert-validate:hover:before {
+	visibility: visible;
+	opacity: 1;
+  }
+  
+  @media (max-width: 992px) {
+	.alert-validate::before {
+	  visibility: visible;
+	  opacity: 1;
+	}
+  }
+
+  .alert-validate::after {
+	content: "\f06a";
+	font-family: "Font Awesome 5 Free";
+	display: block;
+	position: absolute;
+	color: #a06262;
+	font-size: 15px;
+	top: 7px;
+	right: 5px;
+  }
 	
 	

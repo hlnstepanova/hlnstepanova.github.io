@@ -1,8 +1,26 @@
 <!DOCTYPE HTML>
 <!--
+	--Credits--
+	
+	Design: 
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Images:
+	https://unsplash.com/photos/Jztmx9yqjBw Photo by Ryan Hutton on Unsplash
+	https://unsplash.com/photos/5siQcvSxCP8 Photo by Ryoji Iwata on Unsplash
+	https://unsplash.com/photos/sOK9NjLArCw Photo by Gabriel Crismariu on Unsplash
+	https://unsplash.com/photos/y0_vFxOHayg Photo by Wesson Wang on Unsplash
+	https://unsplash.com/photos/iuqmGmst5Po Photo by Tobias Mrzyk on Unsplash
+	https://unsplash.com/photos/h8nxGssjQXs Photo by Jonatan Pie on Unsplash
+	https://unsplash.com/photos/EvGwPnK6apM Photo by Shirly Niv Marton on Unsplash
+	https://unsplash.com/photos/fmTde1Fe23A Photo by Johannes Plenio on Unsplash
+
+
+	Vertical timeline:
+	https://codepen.io/ygc/pen/AXzVya/
+	
 -->
 <html>
 	<head>
@@ -29,11 +47,11 @@
 				<!-- Menu -->
 					<nav id="menu">
 						<ul class="links">
-							<li><a href="resume.html">Resume</a></li>
-							<li><a href="projects.html">Projects</a></li>
+							<li><a href="#skills">Resume</a></li>
+							<li><a href="#projects">Projects</a></li>
 							<li><a href="https://proandroiddev.com/cloud-face-recognition-for-mobile-applications-overview-e96f66ec4bfa">Stories</a></li>
 							<li><a href="https://www.youtube.com/user/oceanhugstheshore/videos">Hobbies</a></li>
-							<li><a href="index.html">Contact</a></li>
+							<li><a href="#contactme">Contact</a></li>
 						</ul>
 					</nav>
 
@@ -48,7 +66,7 @@
 									Java, Kotlin, Flutter</br>
 								</p>
 								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Contact</a></li>
+									<li><a href="#contactme" class="button next scrolly">Contact</a></li>
 								</ul>
 							</div>
 						</div>
@@ -69,7 +87,7 @@
 										<img src="images/resume.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="resume.html" class="link">Resume</a></h3>
+										<h3><a href="#resume" class="scrolly">Resume</a></h3>
 										<p>Let's be teammates!</p>
 									</header>
 								</article>
@@ -78,7 +96,7 @@
 										<img src="images/projects.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="landing.html" class="link">Projects</a></h3>
+										<h3><a href="#projects" class="scrolly">Projects</a></h3>
 										<p>Solving everyday problems with software</p>
 									</header>
 								</article>
@@ -179,6 +197,7 @@
 				</section>
 
 	<!-- Resume -->
+	<!-- Credits to: https://codepen.io/ygc/pen/AXzVya/ -->
 	
 <section id = "resume">
 	<div class="container">
@@ -232,7 +251,7 @@
 			  </span>
 			</div>
 					<li>Jump-started and took full responsibility of <a href="https://play.google.com/store/apps/details?id=de.enveto.plzimmo&hl=en&gl=US">an Android app with 5k+ installs</a></li>
-					<li>Designed and implemented an Android face recognition system in the course of Bachelor project</li>
+					<li>Designed and implemented an <a href="https://proandroiddev.com/cloud-face-recognition-for-mobile-applications-design-and-implementation-7516d3ad49b1">Android face recognition system</a> in the course of Bachelor project</li>
 					<li>Supported other Android projects</li>
 			<ul class="content-skills">
 			<li>Java</li>
@@ -589,7 +608,7 @@
 		
 		<section>
 			<a href="https://src.enveto.de/enveto/cloud-face-recognition-android" class="image">
-				<img src="images/cloudface.png" alt=""/>
+				<img src="images/facerecognition.png" alt=""/>
 			</a>
 			<div class="content">
 			<div class="inner">
@@ -652,12 +671,12 @@
 
 		<section>
 			<a href="https://devpost.com/software/ibot" class="image">
-				<img src="images/ibot.png" alt="" />
+				<img src="images/ibot.jpg" alt="" />
 			</a>
 			<div class="content">
 			<div class="inner">
-				<header class="major">
-					<h3>iBot</h3>
+				<header class="trophy">
+					<span class="icon solid trophy alt fa-trophy"></span><h3>iBot</h3>
 				</header>
 				<p>The winning application in insurance track at Hackaburg 2019. <br/>
 					It is a smart and witty chat bot that can consult you on available types of insurances. <br/>
@@ -751,7 +770,7 @@
 								<h3>Contacts</h3>
 							</header>
 							<p>I'm interested in remote job offers<br/>
-							   I believe, that competence, teamwork and time management are more important than location<br/>
+							   I value competence, teamwork and time management over location<br/>
 							   If you support my views, feel free to reach out to me!<br/>
 							</p>
 						</div>
@@ -763,26 +782,32 @@
 				<section id="contact">
 					<div class="inner">
 						<section>
-							<form class="contact-form validate-form">
+							<form class="contact1-form validate-form">
 								<div class="fields">
-									<div class="field half validate-input" data-validate = "Name is required">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" placeholder="Name"/>
+									<div class="field half"><label for="name">Name</label>
+									<div class="validate-input" data-validate = "Name is required">
+										<input class="input1" type="text" name="name" id="name" placeholder="Name"/>
+										<span class="shadow-input1"></span>
 									</div>
-									<div class="field half validate-input" data-validate = "Valid email is required">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" placeholder="Email" />
 									</div>
-									<div class="field validate-input" data-validate = "Message is required">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6"></textarea>
+									<div class="field half"><label for="email">Email</label>
+									<div class="validate-input" data-validate = "Valid email is required">
+										<input class="input1" type="text" name="email" id="email" placeholder="Email" />
+										<span class="shadow-input1"></span>
 									</div>
+									</div>
+									<div class="field"><label for="message">Message</label>
+									<div class="validate-input" data-validate = "Message is required">
+										<textarea class="input1" name="message" id="message" placeholder="Message" rows="6"></textarea>
+										<span class="shadow-input1"></span>
+									</div>
+								</div>
 								</div>
 								<ul class="actions">
 									<li></li><div class="container-contact-form-btn">
-										<button class="contact-form-btn">
+										<button type="submit" class="contact-form-btn">
 											<span>
-												Submit
+												Send
 												<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
 											</span>
 										</button>
@@ -791,17 +816,20 @@
 								</ul>
 							</form>
 						</section>
+
+
+
 						<section class="split">
 							<section>
 								<div class="contact-method">
-									<span class="icon solid alt fa-envelope"></span>
+									<span class="icon solid style2 contact alt fa-envelope"></span>
 									<h3>Email</h3>
-									<a href="#">hlnstepanova@yandex.ru</a>
+									<a href="#">hlnstepanova@gmail.com</a>
 								</div>
 							</section>
 							<section>
 								<div class="contact-method">
-									<span class="icon solid alt fa-home"></span>
+									<span class="icon solid style2 contact alt fa-home"></span>
 									<h3>Address</h3>
 									<span>Anywhere remote<br /></span>
 								</div>
@@ -823,7 +851,7 @@
 					<li><a href="https://www.linkedin.com/in/lena-stepanova-7061a61a7/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Elena Stepanova</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					<li>&copy; Elena Stepanova</li>
 				</ul>
 			</div>
 		</footer>
@@ -840,7 +868,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="assets/js/email_form.js"></script>
 
 	</body>
 </html>
