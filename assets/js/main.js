@@ -204,6 +204,7 @@
 			var $this = $(this),
 				$image = $this.find('.image'), $img = $image.find('img'),
 				$link = $this.find('.link'),
+				$nolink = $this.find('.scrolly'),
 				x;
 
 			// Image.
@@ -262,6 +263,18 @@
 
 				}
 
+				// Link.
+				if ($nolink.length > 0) {
+
+					$x = $nolink.clone()
+						.text('')
+						.addClass('primary')
+						.appendTo($this);
+
+					$nolink = $nolink.add($x);
+
+				}
+
 		});
 
 	// Header.
@@ -290,6 +303,26 @@
 		}
 
 	// Banner.
+		$banner.each(function() {
+
+			var $this = $(this),
+				$image = $this.find('.image'), $img = $image.find('img');
+
+			// Parallax.
+				$this._parallax(0.275);
+
+			// Image.
+				if ($image.length > 0) {
+
+					// Set image.
+						$this.css('background-image', 'url(' + $img.attr('src') + ')');
+
+					// Hide original.
+						$image.hide();
+
+				}
+
+		});
 
 	// Menu.
 		var $menu = $('#menu'),

@@ -2884,6 +2884,17 @@ min-height: 15em;
 				z-index: 4;
 			}
 
+			.tiles article .scrolly.primary {
+				border: 0;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 4;
+			}
+
+
 			.tiles article:before {
 				-moz-transition: opacity 0.5s ease;
 				-webkit-transition: opacity 0.5s ease;
