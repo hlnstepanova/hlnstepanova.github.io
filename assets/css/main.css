@@ -2361,7 +2361,7 @@ input, select, textarea {
 		display: flex;
 		cursor: default;
 		list-style: none;
-		margin-left: -1em;
+		margin-left: 0em;
 		padding-left: 0;
 	}
 
@@ -2894,7 +2894,7 @@ min-height: 15em;
 				display: block;
 				height: 100%;
 				left: 0;
-				opacity: 0.85;
+				opacity: 0.45;
 				position: absolute;
 				width: 100%;
 				z-index: 2;
@@ -3481,7 +3481,8 @@ min-height: 15em;
 #avatar img{
 	border-radius: 100%;
 	margin-left: 4em;
-width: 60%;
+	display: inline;
+width: 30%;
 }
 
 
@@ -3555,7 +3556,6 @@ width: 60%;
 
 				#banner > .inner header > :first-child {
 					width: auto;
-					margin-left: 50px;
 					margin-right: 0.5em;
 				}
 
@@ -3572,12 +3572,10 @@ width: 60%;
 				-webkit-align-items: center;
 				-ms-align-items: center;
 				align-items: center;
-				margin: 1em;
 			}
 
 				#banner > .inner .content > * {
-					margin-right: 1.5em;
-					margin-left: 35px;
+					margin-right: 5.5em;
 					margin-bottom: 0;
 				}
 
@@ -3593,8 +3591,8 @@ width: 60%;
 				}
 
 		#banner.major {
-			height: 35vh;
-			min-height: 20em;
+			height: 45vh;
+			min-height: 15em;
 			max-height: 40em;
 		}
 
