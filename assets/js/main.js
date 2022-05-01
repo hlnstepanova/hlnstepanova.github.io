@@ -50,7 +50,7 @@
                 
                 if(response.result == "success") {
                     $('.contact1-form')[0].reset();
-                    alert('Thank you for contacting us.');
+                    alert('Thanks for your message! I\'ll reply as soon as possible.');
                     return true;
                 }
                 else {
